@@ -474,6 +474,10 @@
     }
     .setting-row + .setting-row { margin-top: 17px; }
     .setting-copy { max-width: 720px; }
+    .central-shell .company-ai-pane .setting-row {
+      width: 100%;
+      max-width: 820px;
+    }
     .setting-copy strong { display: block; font-size: var(--dt-font-size-150); font-weight: var(--dt-font-weight-semi-bold); }
     .setting-copy p { margin-top: 4px; color: var(--muted); }
     .setting-meta { margin-top: 7px; display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
@@ -2077,7 +2081,7 @@
 
       function companyAiHtml() {
         var company = state.company;
-        return "<div class='settings-pane'>" +
+        return "<div class='settings-pane company-ai-pane'>" +
           "<section class='settings-section'><div class='setting-row'><div class='setting-copy'><strong>Allow AI to be used company-wide</strong><p>Sets the maximum AI access for your company. When turned off, Conversation AI and AI agents &amp; assistants are unavailable in every Office and group. Saved lower-level settings are preserved.</p></div>" + switchHtml("toggle-company-master", company.aiMaster, false, "Company AI availability") + "</div></section>" +
           "<section class='" + aiSectionClass(!company.aiMaster) + "'><div class='section-heading'><h2>Advanced controls</h2><p>Manage each AI capability separately. Turning one off here makes it unavailable in every Office and group, even where lower-level settings allow it.</p></div>" +
             companyFamilyRow(company, "conversation") +
